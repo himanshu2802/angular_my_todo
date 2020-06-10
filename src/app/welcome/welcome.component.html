@@ -1,0 +1,16 @@
+<h1>Welcome {{name}}!</h1>
+
+<div class="alert alert-warning" *ngIf = 'errorFromService'>{{errorFromService}}</div>
+<div class="container">
+    You can navigate to your todos from <a routerLink='/todos'>here</a>
+<div class="container">
+    <button class="btn btn-success" (click)="getWelcomeWithParam()">Get todos</button>
+</div>
+
+<div class="container" *ngIf='messageFromService'>
+    <h2> Customized Message</h2>
+    {{messageFromService}}
+</div>
+    
+    
+</div>
