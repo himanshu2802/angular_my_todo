@@ -40,7 +40,7 @@ export class BasicAuthenticationService {
   executeJwtAuthenticationService(userName, password) {
 
     return this.http.post<any>(
-                  `http://localhost:8080/authenticate`,
+                  `http://localhost:8080/todoApp/authenticate`,
                   {userName, password}).pipe(
                     map(
                       data => {
