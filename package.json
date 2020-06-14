@@ -6,8 +6,8 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "postbuild": "npm run deploy",
-    "predeploy": "rimraf ../Spring Boot Build/src/main/resources/static && mkdirp ../Spring Boot Build/src/main/resources/static",
-    "deploy": "copyfiles -f dist/** ../Spring Boot Build/src/main/resources/static",
+    "predeploy": "rimraf ../Spring_Boot_Build/src/main/resources/static && mkdirp ../Spring_Boot_Build/src/main/resources/static",
+    "deploy": "copyfiles -f dist/** ../Spring_Boot_Build/src/main/resources/static",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
