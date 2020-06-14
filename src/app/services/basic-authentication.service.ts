@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import { from } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export const TOKEN = 'token'
 export const AUTH_USER = 'authenticatedUser'
@@ -18,7 +18,7 @@ export class BasicAuthenticationService {
   executeAuthenticationService(userName, password) {
 
     let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader(userName, password)
-
+    
     let header = new HttpHeaders({
       Authorization: basicAuthHeaderString
     })
@@ -39,8 +39,11 @@ export class BasicAuthenticationService {
 
   executeJwtAuthenticationService(userName, password) {
 
+    let URL = environment.baseUrl;
+    let APPROOT = environment.appRoot;
+
     return this.http.post<any>(
-                  `http://localhost:8080/todoApp/authenticate`,
+                  `${URL}${APPROOT}/authenticate`,
                   {userName, password}).pipe(
                     map(
                       data => {
