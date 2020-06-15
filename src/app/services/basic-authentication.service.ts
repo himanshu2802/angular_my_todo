@@ -18,13 +18,14 @@ export class BasicAuthenticationService {
   executeAuthenticationService(userName, password) {
 
     let basicAuthHeaderString = this.createBasicAuthenticationHttpHeader(userName, password)
-    
+    let URL = environment.baseUrl;
+    let APPROOT = environment.appRoot;
     let header = new HttpHeaders({
       Authorization: basicAuthHeaderString
     })
 
     return this.http.get<AuthenticationBean>(
-                  `http://localhost:8080/basicauth`,
+                  `${URL}${APPROOT}/authenticate`,
                   {headers : header}).pipe(
                     map(
                       data => {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { API_URL } from 'src/app/app.constants';
+import { environment } from '../../../environments/environment';
 
 export class HelloWorldBean{
 
@@ -17,8 +17,9 @@ export class WelcomeDataService {
   constructor(private http:HttpClient) { }
 
   getWelcomeData() {
-
-    return this.http.get<HelloWorldBean>(`${API_URL}/hello-world-bean1`);
+    let API_URL = environment.baseUrl;
+    let APPROOT = environment.appRoot;
+    return this.http.get<HelloWorldBean>(`${API_URL}${APPROOT}/hello-world-bean1`);
     // console.log("getWelcomeData Service method");
   }
 
@@ -29,8 +30,9 @@ export class WelcomeDataService {
     // let header = new HttpHeaders({
     //   Authorization: basicAuthHeaderString
     // })
-
-    return this.http.get<HelloWorldBean>(`${API_URL}/hello-world/path-variable/${name}`
+    let API_URL = environment.baseUrl;
+    let APPROOT = environment.appRoot;
+    return this.http.get<HelloWorldBean>(`${API_URL}${APPROOT}/hello-world/path-variable/${name}`
                   //, {headers : header}
     );
     // console.log("getWelcomeData Service method");
