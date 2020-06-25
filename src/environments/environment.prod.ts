@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseUrl: "http://localhost:8080",
+  baseUrl: "http://34.219.23.240:8080",
   appRoot: "/todoApp"
 };
