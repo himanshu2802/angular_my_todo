@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run ng build --prod",
+    "build": "npm run ng -- build --prod",
     "postbuild": "npm run deploy",
     "predeploy": "rimraf ../Todo_Spring_Build/src/main/resources/static && mkdirp ../Todo_Spring_Build/src/main/resources/static",
     "deploy": "copyfiles -f dist/** ../Todo_Spring_Build/src/main/resources/static",
