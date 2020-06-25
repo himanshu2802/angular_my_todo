@@ -6,8 +6,8 @@
     "start": "ng serve",
     "build": "ng build --prod --optimization=true --buildOptimizer=true",
     "postbuild": "npm run deploy",
-    "predeploy": "rimraf ../Todo_Spring_Build/src/main/resources/static && mkdirp http://34.219.23.240:8080/usr/share/tomcat/webapps/todo",
-    "deploy": "copyfiles -f dist/** http://34.219.23.240:8080/usr/share/tomcat/webapps/todo",
+    "predeploy": "rimraf ../Todo_Spring_Build/src/main/resources/static && mkdirp ../Todo_Spring_Build/src/main/resources/static",
+    "deploy": "copyfiles -f dist/** ../Todo_Spring_Build/src/main/resources/static",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
